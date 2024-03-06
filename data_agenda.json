@@ -1,0 +1,23 @@
+const data = [
+    { 
+        "title": "Nyepi", 
+        "start": "2024-03-11", 
+        "end": "2024-03-11",
+        "backgroundColor": "red",
+        "borderColor": "red"
+    },
+    { 
+        "title": "Idul Fitri", 
+        "start": "2024-03-12", 
+        "end": "2024-03-12",
+        "backgroundColor": "red",
+        "borderColor": "red"
+    },
+    { 
+        "title": "Libur Idul Fitri", 
+        "start": "2024-04-11", 
+        "end": "2024-04-16",
+        "backgroundColor": "red",
+        "borderColor": "red"
+    }
+]

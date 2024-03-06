@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <aside class="sidebar">
+            <button class="btn btn-primary" id="btn-tambahAgenda">Tambah Agenda</button>
+            <ul>
+                <li>Menu 1</li>
+                <li>Menu 2</li>
+                <li>Menu 3</li>
+            </ul>
+        </aside>
+
+        <div class="contain">
+            <div class="top-nav">
+                <h4>Kalender Kwarsa Hexagon</h4>
+            </div>
+
+            <div class="container">
+                <div class="container__title">
+                </div>
+                <div class="container__main">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-wrapper">
+            <div class="modal-title">
+                <span class="close" id="modal-close">&times;</span>
+                <h4>Tambah Agenda</h4>
+            </div>
+            <div class="modal-content">
+                <form action="">
+                    <div class="form-control">
+                        <input type="text" name="" id="">
+                        <label for="">Title</label>
+                    </div>
+                    <div class="form-control">
+                        <input type="date" name="" id="">
+                        <label for="">Pilih Tanggal Mulai</label>
+                    </div>
+                    <div class="form-control">
+                        <input type="date" name="" id="">
+                        <label for="">Pilih Tanggal Berakhir</label>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" name="" id="">
+                        <label for="">Pilih Warna</label>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+    <script src="data_agenda.json"></script>
+    <script>
+        var modal = document.getElementById('myModal');
+        var span = document.getElementById('modal-close');
+        var btn = document.getElementById('btn-tambahAgenda');
+
+        btn.addEventListener('click', function() {
+            modal.style.display = "block";
+        })
+
+        span.addEventListener('click', function() {
+            modal.style.display = "none";
+        })
+
+        window.addEventListener('click', function(event) {
+            if(event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            selectable: true,
+            events: data,
+          });
+          calendar.render();
+        });
+  
+      </script>
+</body>
+</html>
